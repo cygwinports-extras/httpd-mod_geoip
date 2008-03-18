@@ -6,16 +6,15 @@ database to perform the lookup.  It is free software, licensed under
 the Apache license.
 
 Runtime requirements:
-  cygwin-1.5.24-2
+  cygwin-1.5.25-7
   apache2-2.2.6-1
-  libGeoIP1-1.4.3-1
+  libGeoIP1-1.4.4-1
   libapr1-1.2.11-1
 
 Build requirements:
 (besides corresponding -devel packages)
-  cygwin-1.5.24-2
   binutils-20060817-1
-  cygport-0.3.7-1
+  cygport-0.3.8-1
   gcc-core-3.4.4-3
 
 Canonical website:
@@ -27,15 +26,15 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack apache2-mod_geoip-1.2.0-X-src.tar.bz2
+  unpack apache2-mod_geoip-1.2.1-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./apache2-mod_geoip-1.2.0-X.cygport all
+  cygport ./apache2-mod_geoip-1.2.1-X.cygport all
 
 This will create:
-  /usr/src/apache2-mod_geoip-1.2.0-X-src.tar.bz2
-  /usr/src/apache2-mod_geoip-1.2.0-X.tar.bz2
+  /usr/src/apache2-mod_geoip-1.2.1-X-src.tar.bz2
+  /usr/src/apache2-mod_geoip-1.2.1-X.tar.bz2
 
 -------------------------------------------
 
@@ -45,14 +44,17 @@ Files included in the binary package:
   /etc/preremove/apache2-mod_geoip.sh
   /usr/lib/apache2/mod_geoip.la
   /usr/lib/apache2/mod_geoip.so
-  /usr/share/doc/Cygwin/apache2-mod_geoip-1.2.0.README
-  /usr/share/doc/apache2-mod_geoip-1.2.0/Changes
-  /usr/share/doc/apache2-mod_geoip-1.2.0/INSTALL
-  /usr/share/doc/apache2-mod_geoip-1.2.0/README
+  /usr/share/doc/Cygwin/apache2-mod_geoip-1.2.1.README
+  /usr/share/doc/apache2-mod_geoip-1.2.1/Changes
+  /usr/share/doc/apache2-mod_geoip-1.2.1/INSTALL
+  /usr/share/doc/apache2-mod_geoip-1.2.1/README
 
 ------------------
 
 Port Notes:
+
+----- version 1.2.1-1 -----
+Version bump for GeoIP 1.4.4.
 
 ----- version 1.2.0-1 -----
 Initial release for Cygwin.
