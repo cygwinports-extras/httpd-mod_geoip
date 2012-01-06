@@ -1,4 +1,4 @@
-inherit apache
+inherit apache2
 
 HOMEPAGE="http://www.maxmind.com/app/mod_geoip"
 SRC_URI="http://www.maxmind.com/download/geoip/api/${ORIG_PN}2/${ORIG_PN}2_${PV}.tar.gz"
@@ -7,11 +7,11 @@ SRC_DIR="${ORIG_PN}2_${PV}"
 src_compile() {
 	lndirs
 	cd ${B}
-	apxs_compile *.c -lGeoIP
+	apache2_apxs_compile *.c -lGeoIP
 }
 
 src_install() {
 	cd ${B}
-	doapachemod ${ORIG_PN}
-	apache_postinst
+	doapache2mod ${ORIG_PN}
+	apache2_postinst
 }
