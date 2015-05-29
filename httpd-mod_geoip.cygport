@@ -1,27 +1,27 @@
-inherit apache2
+inherit httpd
 
-NAME="apache2-mod_geoip"
-VERSION=1.2.8
+NAME="httpd-mod_geoip"
+VERSION=1.2.10
 RELEASE=1
 CATEGORY="Web"
 SUMMARY="Apache 2.x GeoIP module"
 DESCRIPTION="mod_geoip2 is an Apache 2.0 module for finding the country and
 city that a web request originated from.  It uses the GeoIP library and
 database to perform the lookup."
-HOMEPAGE="http://www.maxmind.com/app/mod_geoip"
-SRC_URI="http://www.maxmind.com/download/geoip/api/mod_geoip2/mod_geoip2_${VERSION}.tar.gz"
-SRC_DIR="mod_geoip2_${VERSION}"
+HOMEPAGE="http://dev.maxmind.com/geoip/legacy/mod_geoip"
+SRC_URI="https://github.com/maxmind/geoip-api-mod_geoip2/archive/${VERSION}/geoip-api-mod_geoip2-${VERSION}.tar.gz"
+SRC_DIR="geoip-api-mod_geoip2-${VERSION}"
 
 src_compile() {
 	lndirs
 	cd ${B}
-	apache2_apxs_compile *.c -lGeoIP
+	httpd_apxs_compile *.c -lGeoIP
 }
 
 src_install() {
 	cd ${B}
-	doapache2mod mod_geoip
-	apache2_postinst
+	dohttpdmod mod_geoip.la
+	httpd_loadmodules
 	dodoc README.php
 }
 
